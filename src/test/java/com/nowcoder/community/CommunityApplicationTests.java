@@ -25,5 +25,11 @@ class CommunityApplicationTests {
         logger.error("error");
     }
 
+    @Test
+    public static void test(){
+        String str = "666";
+        System.out.println("666");
+    }
+
 
 }
