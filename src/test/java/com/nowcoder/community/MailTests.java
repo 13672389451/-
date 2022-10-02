@@ -1,3 +1,4 @@
+/*
 package com.nowcoder.community;
 
 import com.nowcoder.community.util.MailClient;
@@ -16,9 +17,11 @@ public class MailTests {
     @Autowired
     private MailClient mailClient;
 
-    /**
+    */
+/**
      * 注入模板引擎测试html页面
-     */
+     *//*
+
     @Autowired
     private TemplateEngine templateEngine;
 
@@ -41,3 +44,4 @@ public class MailTests {
 
 
 }
+*/

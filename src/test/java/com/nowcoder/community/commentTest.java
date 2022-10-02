@@ -1,6 +1,6 @@
+/*
 package com.nowcoder.community;
 
-import com.nowcoder.community.entity.Comment;
 import com.nowcoder.community.service.CommentService;
 import com.nowcoder.community.service.DiscussPostService;
 import com.sun.org.slf4j.internal.Logger;
@@ -9,8 +9,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
-
-import java.util.Date;
 
 @SpringBootTest
 @ContextConfiguration(classes = CommunityApplication.class)
@@ -46,3 +44,4 @@ public class commentTest {
     }
 
 }
+*/

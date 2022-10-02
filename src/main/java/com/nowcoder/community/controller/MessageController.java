@@ -32,6 +32,7 @@ public class MessageController {
     //私信列表
     @RequestMapping(path="/letter/list",method = RequestMethod.GET)
     public String getLetterList(Model model, Page page){
+//     Integer.valueOf("abc");//404
          User user = hostHolder.getUser();
 
          //分页信息
@@ -63,6 +64,7 @@ public class MessageController {
          int letterUnreadCount = messageService.findLetterUnreadCount(user.getId(),null);
          model.addAttribute("letterUnreadCount",letterUnreadCount);
          return "/site/letter";
+
     }
 
 
@@ -91,11 +93,17 @@ public class MessageController {
          //查询私信目标
         model.addAttribute("target",getLetterTarget(conversationId));
 
+        //设置已读
+        List<Integer>ids = getLetterIds(letterList);
+        if(!ids.isEmpty()){
+            messageService.readMessage(ids);
+        }
+
         return "/site/letter-detail";
     }
 
 
-   public User getLetterTarget(String conversationId){
+   private User getLetterTarget(String conversationId){
         String[] ids = conversationId.split("_");
         int id0 = Integer.parseInt(ids[0]);
         int id1 =Integer.parseInt(ids[1]);
@@ -107,10 +115,28 @@ public class MessageController {
         }
    }
 
+
+  private List<Integer>getLetterIds(List<Message>letterList){
+        List<Integer>ids = new ArrayList<>();
+
+        if(letterList != null){
+            for(Message message : letterList){
+                if(hostHolder.getUser().getId() == message.getToId() && message.getStatus() == 0){
+                    ids.add(message.getId());
+                }
+            }
+        }
+        return ids;
+  }
+
+
+
+
+
    @RequestMapping(path="/letter/send",method = RequestMethod.POST)
    @ResponseBody
    public String sendLetter(String toName,String content){
-
+//       Integer.valueOf("abc");//
         User target = userService.findUserByName(toName);
         if(target == null){
             return CommunityUtil.getJSONString(1,"目标用户不存在！");
@@ -134,6 +160,7 @@ public class MessageController {
         return CommunityUtil.getJSONString(0);
 
    }
+
 
 
 
