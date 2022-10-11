@@ -1,7 +1,7 @@
+/*
 package com.nowcoder.community;
 
-import com.sun.org.slf4j.internal.Logger;
-import com.sun.org.slf4j.internal.LoggerFactory;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ import java.util.concurrent.TimeUnit;
 
 public class RedisTests {
 
-    private static final Logger logger = LoggerFactory.getLogger(RedisTests.class);
+  //  private static final Logger logger = LoggerFactory.getLogger(RedisTests.class);
 
     @Resource
     private RedisTemplate redisTemplate;
@@ -162,3 +162,4 @@ public class RedisTests {
 
 
 }
+*/

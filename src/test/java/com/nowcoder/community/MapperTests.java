@@ -1,3 +1,4 @@
+/*
 package com.nowcoder.community;
 
 import com.nowcoder.community.dao.DiscussPostMapper;
@@ -95,3 +96,4 @@ public class MapperTests {
 
 
 }
+*/
