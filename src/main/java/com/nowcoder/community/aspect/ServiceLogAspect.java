@@ -32,6 +32,9 @@ public class ServiceLogAspect {
         //记录日志
         //获取id
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        if(attributes == null){
+            return ;
+        }
         HttpServletRequest request = attributes.getRequest();
 
         //获取时间
