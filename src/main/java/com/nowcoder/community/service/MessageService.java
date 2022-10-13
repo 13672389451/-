@@ -50,5 +50,22 @@ public class MessageService {
     }
 
 
+    public Message findLatesNotice(int userId,String topic){
+        return messageMapper.selectLatestNotice(userId,topic);
+    }
+
+    public int findNoticCount(int userId,String topic){
+        return messageMapper.selectNoticeCount(userId,topic);
+    }
+
+    public int findNoticUnreadCount(int userId,String topic){
+        return messageMapper.selectNoticeUnreadCount(userId,topic);
+    }
+
+
+    public List<Message> findNotices(int userId,String topic,int offset,int limit){
+        return messageMapper.selectNotices(userId,topic,offset,limit);
+    }
+
 
 }
