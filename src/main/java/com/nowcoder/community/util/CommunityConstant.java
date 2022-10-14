@@ -35,7 +35,13 @@ public interface CommunityConstant {
     //主题 ： 关注
     String  TOPIC_FOLLOW = "follow";
 
+    //主题：发帖
+    String TOPOIC_PUBLICSH= "publicsh";
+
     //系统用户id
     int SYSTEM_USER_ID = 1 ;
+
+
+
 
 }
